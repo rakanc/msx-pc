@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { Partner } from '../../../model/types/partner';
+import { connect } from 'react-redux';
+import { mapDispatchToProps, mapStateToProps } from '../../../containers/partners';
+import { Partner } from '../../../types/partner';
 import PartnerList from '../common/list';
 
 export interface IProps {
   partners: Partner[];
   history: any;
- }
+}
 
 
 // tslint:disable-next-line:no-empty-interface
@@ -37,4 +39,4 @@ class Partners extends React.Component<IProps, IState> {
 }
 
 
-export default Partners;
+export default connect(mapStateToProps, mapDispatchToProps)(Partners);

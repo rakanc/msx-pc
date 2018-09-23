@@ -1,15 +1,15 @@
 import * as React from 'react';
 import TextInput from '../../../common/input/input';
 import SelectInput from '../../../common/select/select';
-import { Partner } from '../../../model/types/partner';
+import { Partner } from '../../../types/partner';
 
 // tslint:disable-next-line:no-empty-interface
 export interface IProps {
   partner: Partner;
   allCountries: string[];
   errors: any;
-  onChange(): void;
-  onSave(): void;
+  onChange?: () => void;
+  onSave?: () => void;
 }
 
 // tslint:disable-next-line:no-empty-interface
@@ -39,7 +39,8 @@ class PartnerDetail extends React.Component<IProps, IState> {
           value={partner.country}
           defaultOption="Select Country"
           options={this.props.allCountries}
-          onChange={this.props.onChange} error={this.props.errors.countryId} />
+          onChange={this.props.onChange}
+          error={this.props.errors.countryId} />
 
         <TextInput
           name="Address"

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Partner } from '../../../model/types/partner';
+import { Partner } from '../../../types/partner';
 import PartnerListRow from './row';
 
 interface IProps {

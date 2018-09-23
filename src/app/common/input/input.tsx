@@ -6,7 +6,7 @@ interface IInputProps {
   placeholder?: string;
   value?: string;
   error?: string;
-  onChange(): void;
+  onChange?: () => void;
 };
 
 const TextInput: React.SFC<IInputProps> = ({ name, label, type, placeholder, value, error, onChange }: IInputProps) => {

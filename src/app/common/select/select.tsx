@@ -6,7 +6,7 @@ interface ISelectProps {
   options: any;
   value?: string;
   error?: string;
-  onChange(): void;
+  onChange?: () => void;
 };
 
 const SelectInput: React.SFC<ISelectProps> = ({ name, label, defaultOption, options, value, error, onChange }: ISelectProps) => {

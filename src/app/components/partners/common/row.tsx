@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { Partner } from '../../../model/types/partner';
+import { Partner } from '../../../types/partner';
 
 interface IProps {
     partner?: Partner;
