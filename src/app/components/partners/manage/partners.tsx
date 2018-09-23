@@ -1,8 +1,11 @@
 import * as React from 'react';
+import { Partner } from '../../../model/types/partner';
+import PartnerList from '../common/list';
 
-
-// tslint:disable-next-line:no-empty-interface
-export interface IProps { }
+export interface IProps {
+  partners: Partner[];
+  history: any;
+ }
 
 
 // tslint:disable-next-line:no-empty-interface
@@ -14,11 +17,21 @@ class Partners extends React.Component<IProps, IState> {
     super(props, state);
   }
 
+  public redirectToAddPartner() {
+    this.props.history.push('/partner');
+  }
   public render() {
+    const { partners } = this.props;
+
     return (
-      <form action="">
-      Testing in Manage partner form
-      </form>
+      <div>
+        <h1>Courses</h1>
+        <input type="submit"
+          value="Add Course"
+          className="btn btn-primary"
+          onClick={this.redirectToAddPartner} />
+        <PartnerList partners={partners} />
+      </div>
     );
   }
 }

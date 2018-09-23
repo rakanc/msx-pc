@@ -21,4 +21,9 @@ const PartnerList: React.SFC<IProps> = (props: IProps) => (
         </tbody>
     </table>
 )
+
+PartnerList.defaultProps = {
+  partners : new Array<Partner>()
+}
+
 export default PartnerList;

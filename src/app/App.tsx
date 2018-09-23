@@ -7,7 +7,7 @@ declare let module: any;
 class App extends React.Component {
     public render() {
         return (
-            <div className="container-fluid">
+            <div className="container container-fluid">
                 <Header />
                 <AppRouter />
             </div>
