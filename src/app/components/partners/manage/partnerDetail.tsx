@@ -22,6 +22,8 @@ class PartnerDetail extends React.Component<IProps, IState> {
   }
 
   public render() {
+    // tslint:disable-next-line:no-debugger
+    debugger;
     const partner = this.props.partner;
     return (
       <form>

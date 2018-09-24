@@ -1,13 +1,14 @@
 import * as React from "react";
 import { Route, Switch } from "react-router";
-import PartnerDetail from "./manage/details";
+import PartnerDetail from "./manage/partnerDetail";
 import Partners from "./manage/partners";
 
 
 const PartnerRouter = () => (
     <Switch>
-        <Route exact={true} path='/partners' component={Partners} />
-        <Route path='partners/:id' component={PartnerDetail} />
+        <Route path='/' component={Partners} />
+        <Route path='/add' component={PartnerDetail} />
+        <Route path='/edit/:id' component={PartnerDetail} />
     </Switch>
 )
 

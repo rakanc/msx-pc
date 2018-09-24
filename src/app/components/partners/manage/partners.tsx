@@ -6,30 +6,34 @@ import PartnerList from '../common/list';
 
 export interface IProps {
   partners: Partner[];
-  history: any;
+  history?: any;
 }
 
 
 // tslint:disable-next-line:no-empty-interface
 export interface IState { }
 
-class Partners extends React.Component<IProps, IState> {
+export class Partners extends React.Component<IProps, IState> {
 
   constructor(props: IProps, state: IState) {
     super(props, state);
+    this.redirectToAddPartner = this.redirectToAddPartner.bind(this);
   }
 
   public redirectToAddPartner() {
-    this.props.history.push('/partner');
+    // tslint:disable-next-line:no-debugger
+    debugger;
+    this.props.history!.push('/partners/add');
   }
   public render() {
     const { partners } = this.props;
 
     return (
       <div>
-        <h1>Courses</h1>
+        <h1>Partners</h1>
         <input type="submit"
-          value="Add Course"
+          name="AddPartner"
+          value="Add Partner"
           className="btn btn-primary"
           onClick={this.redirectToAddPartner} />
         <PartnerList partners={partners} />
