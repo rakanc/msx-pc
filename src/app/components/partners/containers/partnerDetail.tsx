@@ -12,8 +12,6 @@ const getPartnerById = (partners: Partner[], id: string) => {
 
 export function mapStateToProps(state: any, ownProps: any) {
 
-  // tslint:disable-next-line:no-debugger
-  debugger;
   const pid = ownProps.match.params.id;
   let partner = null;
   if (pid && state.partners.length > 0) {

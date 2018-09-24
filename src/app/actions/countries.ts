@@ -41,8 +41,7 @@ export function countriesNOk(ex: any): ICountriesNOk {
 export type ICountriesAction = ICountries | ICountriesOk | ICountriesNOk;
 
 export function LoadCountries() {
-  // tslint:disable-next-line:no-debugger
-  debugger;
+  
   const url = 'http://localhost:3001/countries'
   return (dispatch: any) => {
     dispatch(countries());

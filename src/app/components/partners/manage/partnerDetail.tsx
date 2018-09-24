@@ -1,12 +1,13 @@
 import * as React from 'react';
 import TextInput from '../../../common/input/input';
 import SelectInput from '../../../common/select/select';
+import { Country } from '../../../types/country';
 import { Partner } from '../../../types/partner';
 
 // tslint:disable-next-line:no-empty-interface
 export interface IProps {
   partner: Partner;
-  countries: any;
+  countries: Country[];
   history?: any;
   errors: any;
   updatePartner?: (event: any) => void;
@@ -58,20 +59,19 @@ class PartnerDetail extends React.Component<IProps, IState> {
 
 
   public render() {
-    // tslint:disable-next-line:no-debugger
-    debugger;
+
     const partner = this.state.partner;
     return (
       <form>
         <h1>Manage Partner</h1>
         <TextInput
-          name="Name"
+          name="name"
           label="Name"
           value={partner!.name}
           onChange={this.onUpdate} />
 
         <SelectInput
-          name="countryId"
+          name="country"
           label="Country"
           value={partner!.country.name}
           defaultOption="Select Country"
@@ -79,7 +79,7 @@ class PartnerDetail extends React.Component<IProps, IState> {
           onChange={this.onUpdate} />
 
         <TextInput
-          name="Address"
+          name="address"
           label="Address"
           value={partner!.address}
           onChange={this.onUpdate} />

@@ -20,8 +20,7 @@ class Partners extends React.Component<IProps, IState> {
   }
 
   public redirectToAddPartner() {
-    // tslint:disable-next-line:no-debugger
-    debugger;
+    
     this.props.history!.push('/partners/add');
   }
   public render() {
