@@ -6,11 +6,13 @@ interface ISelectProps {
   options: any;
   value?: string;
   error?: string;
-  onChange?: () => void;
+  onChange?: (event: any) => void;
 };
 
 const SelectInput: React.SFC<ISelectProps> = ({ name, label, defaultOption, options, value, error, onChange }: ISelectProps) => {
 
+  // tslint:disable-next-line:no-debugger
+  debugger;
   return (
     <div className="form-group">
       <label htmlFor={name}>{label}</label>

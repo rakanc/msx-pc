@@ -1,19 +1,18 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
-import { mapDispatchToProps, mapStateToProps } from '../../../containers/partners';
 import { Partner } from '../../../types/partner';
 import PartnerList from '../common/list';
 
 export interface IProps {
   partners: Partner[];
   history?: any;
+  match?: any;
 }
 
 
 // tslint:disable-next-line:no-empty-interface
 export interface IState { }
 
-export class Partners extends React.Component<IProps, IState> {
+class Partners extends React.Component<IProps, IState> {
 
   constructor(props: IProps, state: IState) {
     super(props, state);
@@ -27,6 +26,11 @@ export class Partners extends React.Component<IProps, IState> {
   }
   public render() {
     const { partners } = this.props;
+    const { match } = this.props
+    // tslint:disable-next-line:no-console
+    console.log('Path: ' + match.path);
+    // tslint:disable-next-line:no-console
+    console.log('Url: ' + match.url);
 
     return (
       <div>
@@ -43,4 +47,4 @@ export class Partners extends React.Component<IProps, IState> {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Partners);
+export default Partners;

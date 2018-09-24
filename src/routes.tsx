@@ -10,8 +10,8 @@ const AppRouter: React.StatelessComponent<{}> = () => {
   return (
     <BrowserRouter>
       <div>
-      <Route component={App} />
-       <Switch>
+        <Route component={App} path="/" />
+        <Switch>
           <Route exact={true} path="/" component={Home} />
           <Route path='/partners' component={PartnerRouter} />
           <Route path="/about" component={About} />

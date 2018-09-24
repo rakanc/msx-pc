@@ -1,5 +1,8 @@
+import { Country } from "./country";
 import { Partner } from "./partner";
 
 export interface IStoreState {
-  partners: Partner[]
+  partners: Partner[];
+  countries: Country[];
 }
+

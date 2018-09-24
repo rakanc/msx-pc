@@ -1,8 +1,9 @@
 import { IPartnerAction } from "../actions/partner";
 import { PARTNER_ADD, PARTNER_GET, PARTNER_REMOVE, PARTNER_UPDATE } from "../constants";
 import { Partner } from "../types/partner";
+import initialState from "./initialState";
 
-const partnerReducer = (state: Partner[] = [], action: IPartnerAction) => {
+const partnerReducer = (state: Partner[] = initialState.partners, action: IPartnerAction) => {
   switch (action.type) {
     case PARTNER_ADD:
       return [
