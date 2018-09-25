@@ -22,7 +22,7 @@ app.use(function (req, res, next) {
 });
 
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => res.send('Hello Seller!!!'))
 app.get('/countries', (req, res) => {
   console.log('serving the countries...');
   res.json([
@@ -38,4 +38,4 @@ app.get('/countries', (req, res) => {
   ])
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Mock server listening on port ${port}`))

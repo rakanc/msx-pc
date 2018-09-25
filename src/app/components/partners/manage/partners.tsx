@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Partner } from '../../../types/partner';
 import PartnerList from '../common/list';
-
+import './partner.css';
 export interface IProps {
   partners: Partner[];
   history?: any;
@@ -35,8 +35,8 @@ class Partners extends React.Component<IProps, IState> {
         <h1>Partners</h1>
         <input type="submit"
           name="AddPartner"
-          value="Add Partner"
-          className="btn btn-primary"
+          value="Add"
+          className="btn btn-primary btn-sm"
           onClick={this.redirectToAddPartner} />
         <PartnerList partners={partners} />
       </div>
