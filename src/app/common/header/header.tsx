@@ -16,10 +16,13 @@ const Header: React.SFC<IProps> = (props: IProps) => {
         <small>{props.userEmail}</small>
       </a>
       <Link to="/" className="active">
-      MSX - PC
+        MSX - PC
       </Link>
       <Link to="/partners" className="active">
         Partners
+      </Link>
+      <Link to="/appsource" className="active">
+        AppSource
       </Link>
       <Link to="/about" className="active">
         About
