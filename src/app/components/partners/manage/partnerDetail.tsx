@@ -74,7 +74,7 @@ class PartnerDetail extends React.Component<IProps, IState> {
     const partner = this.state.partner;
     return (
       <form>
-        <h1>Manage Partner</h1>
+        <h2>Manage Partner</h2>
         <TextInput
           name="name"
           label="Name"

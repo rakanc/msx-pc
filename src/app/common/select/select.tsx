@@ -1,4 +1,6 @@
 import * as React from 'react';
+import './select.css';
+
 interface ISelectProps {
   name: string;
   label: string;
@@ -10,9 +12,6 @@ interface ISelectProps {
 };
 
 const SelectInput: React.SFC<ISelectProps> = ({ name, label, defaultOption, options, value, error, onChange }: ISelectProps) => {
-
-  // tslint:disable-next-line:no-debugger
-  debugger;
 
   return (
     <div className="form-group">

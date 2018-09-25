@@ -30,11 +30,10 @@ class Partners extends React.Component<IProps, IState> {
     console.log('Path: ' + match.path);
     console.log('Url: ' + match.url);
     Logger.logEvent('TESTINGREACT');
-    // tslint:disable-next-line:no-debugger
-    debugger;
+
     return (
       <div>
-        <h1>Partners</h1>
+        <h2>Partners</h2>
         <input type="submit"
           name="AddPartner"
           value="Add"

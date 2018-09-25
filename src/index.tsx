@@ -8,9 +8,7 @@ import registerServiceWorker from './registerServiceWorker';
 import AppRouter from './routes';
 
 ReactDOM.render((
-<Provider store={rootStore}><AppRouter /></Provider>),
+<Provider store={rootStore}><div className="container"><AppRouter /></div></Provider>),
   document.getElementById('root') as HTMLElement
 );
-
-
 registerServiceWorker();

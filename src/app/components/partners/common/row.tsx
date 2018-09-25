@@ -7,8 +7,7 @@ interface IProps {
 }
 
 const PartnerListRow: React.SFC<IProps> = (props: IProps) => {
-  // tslint:disable-next-line:no-debugger
-  debugger;
+  
   console.log(props.partner!.country.value);
   return (
     <tr>

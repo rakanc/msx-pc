@@ -8,8 +8,7 @@ export class Logger {
   }
 
   public static init() {
-    // tslint:disable-next-line:no-debugger
-    debugger;
+    
     if (!AppInsights.config) {
       AppInsights.downloadAndSetup(Logger.config);
     }
