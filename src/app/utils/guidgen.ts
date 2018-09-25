@@ -1,3 +1,4 @@
+
 export class GuidGen {
   public static New() {
       return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {

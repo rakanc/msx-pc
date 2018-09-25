@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Partner } from '../../../types/partner';
+import { Logger } from '../../../utils/logger';
 import PartnerList from '../common/list';
 import './partner.css';
 export interface IProps {
@@ -28,6 +29,7 @@ class Partners extends React.Component<IProps, IState> {
     const { match } = this.props
     console.log('Path: ' + match.path);
     console.log('Url: ' + match.url);
+    Logger.logEvent('TESTINGREACT');
     // tslint:disable-next-line:no-debugger
     debugger;
     return (

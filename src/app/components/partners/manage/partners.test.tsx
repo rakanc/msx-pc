@@ -5,9 +5,7 @@ import Partners from './partners';
 
 it('renders the Add partner button', () => {
   const props = {
-    partners: new Array<Partner>(),
-    // tslint:disable-next-line:object-literal-sort-keys
-    history: null
+    partners: new Array<Partner>()
   }
   const partners = enzyme.shallow(<Partners {...props} />);
   expect(partners.find("h1").text()).toEqual('Partners')
