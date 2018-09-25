@@ -1,16 +1,20 @@
 import { IPartnerAction } from "../actions/partner";
 import { PARTNER_ADD, PARTNER_GET, PARTNER_REMOVE, PARTNER_UPDATE } from "../constants";
 import { Partner } from "../types/partner";
+import { GuidGen } from "../utils/guidgen";
 import initialState from "./initialState";
 
 const partnerReducer = (state: Partner[] = initialState.partners, action: IPartnerAction) => {
+  // tslint:disable-next-line:no-debugger
+  // debugger;
   switch (action.type) {
-    case PARTNER_ADD:
+    case PARTNER_ADD: {
+      action.partner.id = GuidGen.New();
       return [
         ...state,
         Object.assign({}, action.partner)
       ];
-
+    }
     case PARTNER_GET:
       return [...state];
 

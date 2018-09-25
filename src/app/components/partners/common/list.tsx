@@ -12,6 +12,7 @@ const PartnerList: React.SFC<IProps> = (props: IProps) => (
             <tr>
                 <th>Name</th>
                 <th>Address</th>
+                <th>Country</th>
             </tr>
         </thead>
         <tbody>

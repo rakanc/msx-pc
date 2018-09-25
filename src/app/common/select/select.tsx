@@ -2,7 +2,7 @@ import * as React from 'react';
 interface ISelectProps {
   name: string;
   label: string;
-  defaultOption: string;
+  defaultOption: any;
   options: any;
   value?: string;
   error?: string;
@@ -11,7 +11,9 @@ interface ISelectProps {
 
 const SelectInput: React.SFC<ISelectProps> = ({ name, label, defaultOption, options, value, error, onChange }: ISelectProps) => {
 
-  
+  // tslint:disable-next-line:no-debugger
+  debugger;
+
   return (
     <div className="form-group">
       <label htmlFor={name}>{label}</label>
@@ -23,7 +25,7 @@ const SelectInput: React.SFC<ISelectProps> = ({ name, label, defaultOption, opti
           className="form-control">
           <option value="">{defaultOption}</option>
           {options.map((option: any) => {
-            return <option key={option.id} value={option}>{option.value}</option>;
+            return <option key={option.id} value={option.id}>{option.value}</option>;
           })
           }
         </select>

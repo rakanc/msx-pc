@@ -20,17 +20,16 @@ class Partners extends React.Component<IProps, IState> {
   }
 
   public redirectToAddPartner() {
-    
+
     this.props.history!.push('/partners/add');
   }
   public render() {
     const { partners } = this.props;
     const { match } = this.props
-    // tslint:disable-next-line:no-console
     console.log('Path: ' + match.path);
-    // tslint:disable-next-line:no-console
     console.log('Url: ' + match.url);
-
+    // tslint:disable-next-line:no-debugger
+    debugger;
     return (
       <div>
         <h1>Partners</h1>

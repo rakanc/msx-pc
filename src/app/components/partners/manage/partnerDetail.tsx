@@ -10,8 +10,8 @@ export interface IProps {
   countries: Country[];
   history?: any;
   errors: any;
-  updatePartner?: (event: any) => void;
-  createPartner?: (event: any) => void;
+  onUpdate?: (event: any) => void;
+  onAdd?: (event: any) => void;
 }
 
 export interface IState {
@@ -28,13 +28,24 @@ class PartnerDetail extends React.Component<IProps, IState> {
       partner: Object.assign({}, props.partner)
     };
 
+    this.onSave = this.onSave.bind(this);
     this.onUpdate = this.onUpdate.bind(this);
+    this.onUpdateCountry = this.onUpdateCountry.bind(this);
+    this.redirect = this.redirect.bind(this);
   }
 
   public onUpdate(event: any) {
     const field = event.target.name;
     const partner = Object.assign({}, this.state.partner);
     partner[field] = event.target.value;
+    return this.setState({ partner });
+  }
+
+  public onUpdateCountry(event: any) {
+    const field = event.target.name;
+    const country = this.props.countries.find( c => c.id === event.target.value);
+    const partner = Object.assign({}, this.state.partner);
+    partner[field] = country;
     return this.setState({ partner });
   }
 
@@ -46,12 +57,12 @@ class PartnerDetail extends React.Component<IProps, IState> {
     event.preventDefault();
 
     if (!this.state.partner!.id) {
-      if (this.props.createPartner) {
-        this.props.createPartner(this.state.partner);
+      if (this.props.onAdd) {
+        this.props.onAdd(this.state.partner);
       }
     } else {
-      if (this.props.updatePartner) {
-        this.props.updatePartner(this.state.partner);
+      if (this.props.onUpdate) {
+        this.props.onUpdate(this.state.partner);
       }
     }
     this.redirect();
@@ -73,10 +84,10 @@ class PartnerDetail extends React.Component<IProps, IState> {
         <SelectInput
           name="country"
           label="Country"
-          value={partner!.country.name}
-          defaultOption="Select Country"
+          value={partner!.country.id}
+          defaultOption="Select a Country"
           options={this.props.countries}
-          onChange={this.onUpdate} />
+          onChange={this.onUpdateCountry} />
 
         <TextInput
           name="address"

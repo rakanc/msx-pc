@@ -22,35 +22,4 @@ export interface IUpdatePartner {
 
 export type IPartnerAction = IAddPartner | IGetPartner | IRemovePartner | IUpdatePartner;
 
-export function addPartner(partner: Partner): IAddPartner {
-  return {
-    type: constants.PARTNER_ADD,
-    // tslint:disable-next-line:object-literal-sort-keys
-    partner
-  }
-}
-
-export function removePartner(id: string): IRemovePartner {
-  return {
-    type: constants.PARTNER_REMOVE,
-    // tslint:disable-next-line:object-literal-sort-keys
-    id
-  }
-}
-
-
-export function updatePartner(partner: Partner): IUpdatePartner {
-  return {
-    type: constants.PARTNER_UPDATE,
-    // tslint:disable-next-line:object-literal-sort-keys
-    partner
-  }
-}
-
-
-export function getPartner(): IGetPartner {
-  return {
-    type: constants.PARTNER_GET
-  }
-}
 
