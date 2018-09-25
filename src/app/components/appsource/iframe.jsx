@@ -13,7 +13,7 @@ const AppSourceFrame = ({ }) => {
       correlationId: '45b081e2-01b5-4d79-8036-bb2c8759c21f',
       firstName: 'Rajagopal',
       getAppsEndpoint: 'https://biazure-int-edog-redirect.analysis-df.windows.net/v1.0/AppSource/applications',
-      lastName: 'Kamchi',
+      lastName: 'Kanchi',
       workEmail: 'rakanc@microsoft.com'
     },
     msgType: 'loadMarketplace'
