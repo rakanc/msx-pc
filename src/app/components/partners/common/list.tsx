@@ -2,11 +2,11 @@ import * as React from 'react';
 import { Partner } from '../../../types/partner';
 import PartnerListRow from './row';
 
-interface IProps {
+interface PartnerListProps {
     partners?: Partner[];
 }
 
-const PartnerList: React.SFC<IProps> = (props: IProps) => (
+const PartnerList: React.SFC<PartnerListProps> = (props: PartnerListProps) => (
     <table className="table">
         <thead>
             <tr>

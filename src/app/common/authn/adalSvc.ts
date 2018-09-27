@@ -1,6 +1,7 @@
 import { AdalConfig } from './config';
 import 'expose-loader?AuthenticationContext!../../../../node_modules/adal-angular/lib/adal.js';
 import { injectable } from 'inversify';
+import "reflect-metadata";
 
 const createAuthContextFn: adal.AuthenticationContextStatic = AuthenticationContext;
 

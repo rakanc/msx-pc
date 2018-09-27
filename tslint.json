@@ -16,6 +16,7 @@
     "no-console": false,
     "no-bitwise": false,
     "no-debugger": false,
-    "ordered-imports": false
+    "ordered-imports": false,
+    "interface-name": false
   }
 }

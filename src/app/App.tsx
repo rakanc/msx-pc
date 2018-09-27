@@ -3,14 +3,18 @@ import { AdalService } from "./common/authn/adalSvc";
 import Header from "./common/header/header";
 
 declare let module: any;
-export interface IProps {
+export interface AppProps {
   match?: any;
 }
 
-class App extends React.Component<IProps> {
+class App extends React.Component<AppProps> {
   public userName = "";
   public userEmail = "";
 
+  constructor(props: AppProps) {
+    super(props);
+  }
+  
   public componentWillMount() {
     const adalSvc = new AdalService();
 

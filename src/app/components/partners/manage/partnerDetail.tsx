@@ -5,7 +5,7 @@ import { Country } from '../../../types/country';
 import { Partner } from '../../../types/partner';
 
 // tslint:disable-next-line:no-empty-interface
-export interface IProps {
+export interface PartnerDetailProps {
   partner: Partner;
   countries: Country[];
   history?: any;
@@ -14,12 +14,12 @@ export interface IProps {
   onAdd?: (event: any) => void;
 }
 
-export interface IState {
+export interface PartnerDetailState {
   partner: Partner;
 }
-class PartnerDetail extends React.Component<IProps, IState> {
+class PartnerDetail extends React.Component<PartnerDetailProps, PartnerDetailState> {
 
-  constructor(props: IProps, state: IState) {
+  constructor(props: PartnerDetailProps, state: PartnerDetailState) {
     super(props, state);
 
 

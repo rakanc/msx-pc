@@ -2,12 +2,12 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import './header.css';
 
-interface IProps {
+interface HeaderProps {
   userName: string;
   userEmail: string;
 }
 
-const Header: React.SFC<IProps> = (props: IProps) => {
+const Header: React.SFC<HeaderProps> = (props: HeaderProps) => {
   return (
     <div className="topnav">
       <a className="LoggedInUser">

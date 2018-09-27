@@ -3,7 +3,7 @@ import { Partner } from '../../../types/partner';
 import { Logger } from '../../../utils/logger';
 import PartnerList from '../common/list';
 import './partner.css';
-export interface IProps {
+export interface PartnersProps {
   partners: Partner[];
   history?: any;
   match?: any;
@@ -11,11 +11,11 @@ export interface IProps {
 
 
 // tslint:disable-next-line:no-empty-interface
-export interface IState { }
+export interface PartnersState { }
 
-class Partners extends React.Component<IProps, IState> {
+class Partners extends React.Component<PartnersProps, PartnersState> {
 
-  constructor(props: IProps, state: IState) {
+  constructor(props: PartnersProps, state: PartnersState) {
     super(props, state);
     this.redirectToAddPartner = this.redirectToAddPartner.bind(this);
   }

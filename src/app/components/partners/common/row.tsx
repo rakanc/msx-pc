@@ -2,12 +2,12 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { Partner } from '../../../types/partner';
 
-interface IProps {
+interface PartnerListRowProps {
   partner?: Partner;
 }
 
-const PartnerListRow: React.SFC<IProps> = (props: IProps) => {
-  
+const PartnerListRow: React.SFC<PartnerListRowProps> = (props: PartnerListRowProps) => {
+
   console.log(props.partner!.country.value);
   return (
     <tr>
