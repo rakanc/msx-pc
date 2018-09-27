@@ -1,8 +1,10 @@
-import 'expose-loader?AuthenticationContext!../../../../node_modules/adal-angular/lib/adal.js';
 import { AdalConfig } from './config';
+import 'expose-loader?AuthenticationContext!../../../../node_modules/adal-angular/lib/adal.js';
+import { injectable } from 'inversify';
 
 const createAuthContextFn: adal.AuthenticationContextStatic = AuthenticationContext;
 
+@injectable()
 export class AdalService {
   private context: adal.AuthenticationContext;
 

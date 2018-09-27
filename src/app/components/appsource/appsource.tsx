@@ -22,7 +22,7 @@ class Appsource extends React.Component {
 
   }
   public msgHandler(e: any) {
-    // debugger;
+    
     if (!e.data) {
       return;
     }
