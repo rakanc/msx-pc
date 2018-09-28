@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'office-ui-fabric-react/lib/Link';
 
 class Home extends React.Component {
 
@@ -8,7 +8,7 @@ class Home extends React.Component {
             <div className="jumbotron" >
                 <h1>Partner Administration</h1>
                 <p>Enable every Partner to achieve more...</p>
-                <Link to="about" className="btn btn-primary btn-lg">Learn more</Link>
+                <Link href="about" >Learn more</Link>
             </div >
         );
     }

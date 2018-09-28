@@ -1,6 +1,7 @@
 import * as React from 'react';
 import TextInput from '../../../common/input/input';
 import SelectInput from '../../../common/select/select';
+import { DefaultButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
 import { Country } from '../../../types/country';
 import { Partner } from '../../../types/partner';
 
@@ -17,7 +18,7 @@ export interface PartnerDetailProps {
 export interface PartnerDetailState {
   partner: Partner;
 }
-class PartnerDetail extends React.Component<PartnerDetailProps, PartnerDetailState> {
+class PartnerDetail extends React.Component<PartnerDetailProps & IButtonProps, PartnerDetailState> {
 
   constructor(props: PartnerDetailProps, state: PartnerDetailState) {
     super(props, state);
@@ -43,7 +44,7 @@ class PartnerDetail extends React.Component<PartnerDetailProps, PartnerDetailSta
 
   public onUpdateCountry(event: any) {
     const field = event.target.name;
-    const country = this.props.countries.find( c => c.id === event.target.value);
+    const country = this.props.countries.find(c => c.id === event.target.value);
     const partner = Object.assign({}, this.state.partner);
     partner[field] = country;
     return this.setState({ partner });
@@ -95,12 +96,14 @@ class PartnerDetail extends React.Component<PartnerDetailProps, PartnerDetailSta
           value={partner!.address}
           onChange={this.onUpdate} />
 
-        <input
-          type="submit"
+        <DefaultButton
+          primary={true}
           disabled={false}
-          value='Save'
-          className="btn btn-primary"
-          onClick={this.onSave} />
+          data-automation-id="save"
+          text="Save"
+          onClick={this.onSave}
+          allowDisabledFocus={true}
+        />
       </form>
     );
   }

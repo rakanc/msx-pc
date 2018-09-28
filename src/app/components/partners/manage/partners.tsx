@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Partner } from '../../../types/partner';
 import { Logger } from '../../../utils/logger';
+import { DefaultButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
 import PartnerList from '../common/list';
 import './partner.css';
 export interface PartnersProps {
@@ -13,7 +14,7 @@ export interface PartnersProps {
 // tslint:disable-next-line:no-empty-interface
 export interface PartnersState { }
 
-class Partners extends React.Component<PartnersProps, PartnersState> {
+class Partners extends React.Component<PartnersProps & IButtonProps, PartnersState> {
 
   constructor(props: PartnersProps, state: PartnersState) {
     super(props, state);
@@ -34,11 +35,15 @@ class Partners extends React.Component<PartnersProps, PartnersState> {
     return (
       <div>
         <h2>Partners</h2>
-        <input type="submit"
+        <DefaultButton
+          primary={true}
           name="AddPartner"
-          value="Add"
-          className="btn btn-primary btn-sm"
-          onClick={this.redirectToAddPartner} />
+          disabled={false}
+          data-automation-id="save"
+          text="Add"
+          onClick={this.redirectToAddPartner}
+          allowDisabledFocus={true}
+        />
         <PartnerList partners={partners} />
       </div>
     );

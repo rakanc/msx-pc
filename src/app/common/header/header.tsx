@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { Link } from 'office-ui-fabric-react/lib/Link';
 import './header.css';
 
 interface HeaderProps {
@@ -15,16 +15,16 @@ const Header: React.SFC<HeaderProps> = (props: HeaderProps) => {
         <br />
         <small>{props.userEmail}</small>
       </a>
-      <Link to="/" className="active">
+      <Link href="/" className="active">
         MSX - PC
       </Link>
-      <Link to="/partners" className="active">
+      <Link href="/partners" className="active">
         Partners
       </Link>
-      <Link to="/appsource" className="active">
+      <Link href="/appsource" className="active">
         AppSource
       </Link>
-      <Link to="/about" className="active">
+      <Link href="/about" className="active">
         About
       </Link>
     </div>
