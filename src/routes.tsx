@@ -1,20 +1,25 @@
 import * as React from "react";
 import { Route } from "react-router";
-import { Switch } from "react-router-dom";
-import About from "./app/components/about/AboutPage";
+import { BrowserRouter, Switch } from "react-router-dom";
+import App from "./app/App";
+import About from "./app/components/about/About";
+import Appsource from "./app/components/appsource/appsource";
 import Home from "./app/components/home/HomPage";
 import PartnerRouter from "./app/components/partners/routes";
 
 const AppRouter: React.StatelessComponent<{}> = () => {
   return (
-    <div>
-      <Switch>
-        <Route exact={true} path="/" component={Home} />
-        <Route path='/partners' component={PartnerRouter} />
-        <Route path="/about" component={About} />
-      </Switch>
-    </div>
-
+    <BrowserRouter>
+      <div>
+        <Route component={App} path="/" />
+        <Switch>
+          <Route exact={true} path="/" component={Home} />
+          <Route path='/partners' component={PartnerRouter} />
+          <Route path="/appsource" component={Appsource} />
+          <Route path="/about" component={About} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
