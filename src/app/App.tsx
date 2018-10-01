@@ -1,10 +1,11 @@
 import * as React from "react";
 import { AdalService } from "./common/authn/adalSvc";
 import Header from "./common/header/header";
+import { Fabric } from 'office-ui-fabric-react/lib/Fabric'
 
 declare let module: any;
 export interface AppProps {
-  match?: any;
+  history?: any;
 }
 
 class App extends React.Component<AppProps> {
@@ -28,15 +29,12 @@ class App extends React.Component<AppProps> {
     }
   }
   public render() {
-    const { match } = this.props;
-    // tslint:disable-next-line:no-console
-    console.log("Path: " + match.path);
-    // tslint:disable-next-line:no-console
-    console.log("Url: " + match.url);
+    
     return (
-      <div className="container-fluid">
-        <Header userName={this.userName} userEmail={this.userEmail} />
-      </div>
+      <Fabric className="App">
+            <Header userName={this.userName} userEmail={this.userEmail} history={this.props.history}/>
+        </Fabric>
+
     );
   }
 }

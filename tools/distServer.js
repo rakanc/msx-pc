@@ -27,13 +27,13 @@ app.get('/countries', (req, res) => {
   console.log('serving the countries...');
   res.json([
     {
-      "id": "1", "value": "country-1"
+      "key": "1", "text": "country-1"
     },
     {
-      "id": "2", "value": "country-2"
+      "key": "2", "text": "country-2"
     },
     {
-      "id": "3", "value": "country-3"
+      "key": "3", "text": "country-3"
     }
   ])
 });

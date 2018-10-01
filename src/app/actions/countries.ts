@@ -25,7 +25,6 @@ export function countries(): ICountries {
 export function countriesOk(res: any): ICountriesOk {
   return {
     type: constants.COUNTRIES_OK,
-    // tslint:disable-next-line:object-literal-sort-keys
     payload: res
   }
 }
@@ -34,7 +33,6 @@ export function countriesOk(res: any): ICountriesOk {
 export function countriesNOk(ex: any): ICountriesNOk {
   return {
     type: constants.COUNTRIES_NOK,
-    // tslint:disable-next-line:object-literal-sort-keys
     payload: ex
   }
 }

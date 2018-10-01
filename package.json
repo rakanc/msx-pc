@@ -12,6 +12,7 @@
     "inversify": "^4.13.0",
     "office-ui-fabric-react": "^6.74.1",
     "react": "^16.5.2",
+    "react-collapsing-table": "^0.4.2",
     "react-dom": "^16.5.2",
     "react-iframe-comm": "^1.2.2",
     "react-redux": "^5.0.7",

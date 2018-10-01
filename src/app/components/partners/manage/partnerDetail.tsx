@@ -1,9 +1,11 @@
 import * as React from 'react';
 import TextInput from '../../../common/input/input';
 import SelectInput from '../../../common/select/select';
+import { Modal } from 'office-ui-fabric-react/lib/Modal';
 import { DefaultButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
 import { Country } from '../../../types/country';
 import { Partner } from '../../../types/partner';
+import { IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 
 // tslint:disable-next-line:no-empty-interface
 export interface PartnerDetailProps {
@@ -17,6 +19,7 @@ export interface PartnerDetailProps {
 
 export interface PartnerDetailState {
   partner: Partner;
+  showModal: boolean;
 }
 class PartnerDetail extends React.Component<PartnerDetailProps & IButtonProps, PartnerDetailState> {
 
@@ -26,13 +29,16 @@ class PartnerDetail extends React.Component<PartnerDetailProps & IButtonProps, P
 
 
     this.state = {
-      partner: Object.assign({}, props.partner)
+      partner: Object.assign({}, props.partner),
+      showModal: true
     };
 
     this.onSave = this.onSave.bind(this);
     this.onUpdate = this.onUpdate.bind(this);
     this.onUpdateCountry = this.onUpdateCountry.bind(this);
     this.redirect = this.redirect.bind(this);
+    this.showModal = this.showModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   public onUpdate(event: any) {
@@ -42,11 +48,10 @@ class PartnerDetail extends React.Component<PartnerDetailProps & IButtonProps, P
     return this.setState({ partner });
   }
 
-  public onUpdateCountry(event: any) {
-    const field = event.target.name;
-    const country = this.props.countries.find(c => c.id === event.target.value);
+  public onUpdateCountry(item: IDropdownOption) {
+    console.log('here is the things updating...' + item.key + ' ' + item.text + ' ' + item.selected);
     const partner = Object.assign({}, this.state.partner);
-    partner[field] = country;
+    partner.country = item as Country;
     return this.setState({ partner });
   }
 
@@ -68,13 +73,23 @@ class PartnerDetail extends React.Component<PartnerDetailProps & IButtonProps, P
     }
     this.redirect();
   }
-
+  public showModal(): void {
+    this.setState({ showModal: true });
+  };
+  public closeModal(): void {
+    this.setState({ showModal: false });
+  };
 
   public render() {
 
     const partner = this.state.partner;
     return (
-      <form>
+      <Modal
+        isOpen={this.state.showModal}
+        onDismiss={this.closeModal}
+        isBlocking={false}
+        containerClassName="ms-modalExample-container"
+      >
         <h2>Manage Partner</h2>
         <TextInput
           name="name"
@@ -85,7 +100,7 @@ class PartnerDetail extends React.Component<PartnerDetailProps & IButtonProps, P
         <SelectInput
           name="country"
           label="Country"
-          value={partner!.country.id}
+          value={partner!.country.key}
           defaultOption="Select a Country"
           options={this.props.countries}
           onChange={this.onUpdateCountry} />
@@ -104,7 +119,7 @@ class PartnerDetail extends React.Component<PartnerDetailProps & IButtonProps, P
           onClick={this.onSave}
           allowDisabledFocus={true}
         />
-      </form>
+      </Modal>
     );
   }
 }

@@ -8,12 +8,12 @@ interface PartnerListRowProps {
 
 const PartnerListRow: React.SFC<PartnerListRowProps> = (props: PartnerListRowProps) => {
 
-  console.log(props.partner!.country.value);
+  console.log(props.partner!.country.text);
   return (
     <tr>
       <td><Link to={'partners/edit/' + props.partner!.id}>{props.partner!.name}</Link></td>
       <td>{props.partner!.address}</td>
-      <td>{props.partner!.country.value}</td>
+      <td>{props.partner!.country.text}</td>
     </tr>
   );
 }

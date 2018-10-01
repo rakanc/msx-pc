@@ -10,7 +10,6 @@ import PartnerDetail from '../manage/partnerDetail';
 export function addPartner(partner: Partner): IAddPartner {
   return {
     type: constants.PARTNER_ADD,
-    // tslint:disable-next-line:object-literal-sort-keys
     partner
   }
 }
@@ -18,7 +17,6 @@ export function addPartner(partner: Partner): IAddPartner {
 export function removePartner(id: string): IRemovePartner {
   return {
     type: constants.PARTNER_REMOVE,
-    // tslint:disable-next-line:object-literal-sort-keys
     id
   }
 }
@@ -27,7 +25,6 @@ export function removePartner(id: string): IRemovePartner {
 export function updatePartner(partner: Partner): IUpdatePartner {
   return {
     type: constants.PARTNER_UPDATE,
-    // tslint:disable-next-line:object-literal-sort-keys
     partner
   }
 }

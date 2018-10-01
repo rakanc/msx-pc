@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Dropdown } from 'office-ui-fabric-react/lib/Dropdown';
 import './select.css';
 
 interface ISelectProps {
@@ -11,26 +12,16 @@ interface ISelectProps {
   onChange?: (event: any) => void;
 };
 
-const SelectInput: React.SFC<ISelectProps> = ({ name, label, defaultOption, options, value, error, onChange }: ISelectProps) => {
-
+const SelectInput: React.SFC<ISelectProps> = ({ label, defaultOption, options, value, error, onChange }: ISelectProps) => {
   return (
-    <div className="form-group">
-      <label htmlFor={name}>{label}</label>
-      <div className="field">
-        <select
-          name={name}
-          value={value}
-          onChange={onChange}
-          className="form-control">
-          <option value="">{defaultOption}</option>
-          {options.map((option: any) => {
-            return <option key={option.id} value={option.id}>{option.value}</option>;
-          })
-          }
-        </select>
-        {error && <div className="alert alert-danger">{error}</div>}
-      </div>
-    </div>
+    <Dropdown
+          label={label}
+          defaultSelectedKey = {value}
+          onChanged={onChange}
+          placeHolder="Select an Option"
+          options={options}
+          errorMessage={error}
+        />
   );
 };
 
