@@ -9,19 +9,23 @@ interface ISelectProps {
   options: any;
   value?: string;
   error?: string;
+  cname?: string;
   onChange?: (event: any) => void;
 };
 
-const SelectInput: React.SFC<ISelectProps> = ({ label, defaultOption, options, value, error, onChange }: ISelectProps) => {
+const SelectInput: React.SFC<ISelectProps> = ({ label, cname, defaultOption, options, value, error, onChange }: ISelectProps) => {
+  const cn = cname ? `${cname}` : "Dropdown";
   return (
-    <Dropdown
-          label={label}
-          defaultSelectedKey = {value}
-          onChanged={onChange}
-          placeHolder="Select an Option"
-          options={options}
-          errorMessage={error}
-        />
+    <div className={cn}>
+      <Dropdown
+        label={label}
+        defaultSelectedKey={value}
+        onChange={onChange}
+        placeHolder="Select an Option"
+        options={options}
+        errorMessage={error}
+      />
+    </div>
   );
 };
 

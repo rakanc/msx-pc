@@ -5,7 +5,7 @@ import { GuidGen } from "../utils/guidgen";
 import initialState from "./initialState";
 
 const partnerReducer = (state: Partner[] = initialState.partners, action: IPartnerAction) => {
-  
+
   switch (action.type) {
     case PARTNER_ADD: {
       action.partner.id = GuidGen.New();

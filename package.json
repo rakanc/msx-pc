@@ -12,7 +12,6 @@
     "inversify": "^4.13.0",
     "office-ui-fabric-react": "^6.74.1",
     "react": "^16.5.2",
-    "react-collapsing-table": "^0.4.2",
     "react-dom": "^16.5.2",
     "react-iframe-comm": "^1.2.2",
     "react-redux": "^5.0.7",
@@ -53,6 +52,7 @@
     "redux-immutable-state-invariant": "^2.1.0",
     "redux-thunk": "^2.3.0",
     "typescript": "^3.0.3",
-    "typings": "^2.1.1"
+    "typings": "^2.1.1",
+    "typings-for-css-modules-loader": "^1.7.0"
   }
 }

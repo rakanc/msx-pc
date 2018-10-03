@@ -1,3 +1,64 @@
-table {
-  margin: 10px 10px 0px 10px;
+.saveBtn {
 }
+fieldset {
+  padding-inline-start: 0;
+}
+.name {
+  margin: 0px 10px 0px 5px;
+  width: 200px;
+  float: left;
+}
+.address {
+  margin: 0px 10px 0px 5px;
+  width: 400px;
+  float: left;
+}
+.name1 {
+  margin: 0px 10px 0px 5px;
+  width: 350px;
+  float: left;
+}
+.name2 {
+  margin: 0px 10px 0px 5px;
+  width: 150px;
+  float: left;
+}
+.name3 {
+  margin: 0px 10px 0px 5px;
+  width: 150px;
+  float: left;
+}
+.Dropdown1 {
+  margin: 0px 10px 0px 10px;
+  width: 75px;
+  float: left;
+}
+.Dropdown2 {
+  margin: 0px 10px 0px 10px;
+  width: 175px;
+  float: left;
+}
+
+.name4 {
+  margin: 0px 10px 0px 5px;
+  width: 150px;
+  float: left;
+}
+
+.modal-container {
+  min-height: 50vh;
+  min-width: 50vw;
+}
+  .modal-header {
+    color: black;
+    font-size: 2em;
+    padding: 5px 0px 2px 20px;
+    min-height: 20px;
+  }
+
+  .modal-footer {
+    padding: 10px 18px;
+    overflow: hidden;
+    bottom: 15px;
+    left: 20px;
+  }

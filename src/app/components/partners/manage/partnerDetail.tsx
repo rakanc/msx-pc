@@ -2,10 +2,12 @@ import * as React from 'react';
 import TextInput from '../../../common/input/input';
 import SelectInput from '../../../common/select/select';
 import { Modal } from 'office-ui-fabric-react/lib/Modal';
+import './partner.css';
 import { DefaultButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
 import { Country } from '../../../types/country';
 import { Partner } from '../../../types/partner';
 import { IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
+import { Label } from 'office-ui-fabric-react/lib/Label';
 
 // tslint:disable-next-line:no-empty-interface
 export interface PartnerDetailProps {
@@ -87,38 +89,121 @@ class PartnerDetail extends React.Component<PartnerDetailProps & IButtonProps, P
       <Modal
         isOpen={this.state.showModal}
         onDismiss={this.closeModal}
-        isBlocking={false}
-        containerClassName="ms-modalExample-container"
+        isBlocking={true}
+        containerClassName="modal-container"
       >
-        <h2>Manage Partner</h2>
-        <TextInput
-          name="name"
-          label="Name"
-          value={partner!.name}
-          onChange={this.onUpdate} />
+        <div className="modal-header">
+          <Label>Manage Partner</Label>
+        </div>
+        <hr />
+        <div>
+          <fieldset>
+            <legend>Customer Info</legend>
+            <TextInput
+              name="name"
+              label="Name"
+              cname="name"
+              value={partner!.name}
+              onChange={this.onUpdate} />
+            <TextInput
+              name="address"
+              label="Address"
+              cname="address"
+              value={partner!.address}
+              onChange={this.onUpdate} />
+            <SelectInput
+              name="country"
+              label="Country"
+              cname="Dropdown1"
+              value={partner!.country.key}
+              defaultOption="Select a Country"
+              options={this.props.countries}
+              onChange={this.onUpdateCountry} />
+            <TextInput
+              name="name"
+              label="Name1"
+              cname="name1"
+              value={partner!.name}
+              onChange={this.onUpdate} />
 
-        <SelectInput
-          name="country"
-          label="Country"
-          value={partner!.country.key}
-          defaultOption="Select a Country"
-          options={this.props.countries}
-          onChange={this.onUpdateCountry} />
+            <TextInput
+              name="name"
+              label="Name2"
+              cname="name2"
+              value={partner!.name}
+              onChange={this.onUpdate} />
 
-        <TextInput
-          name="address"
-          label="Address"
-          value={partner!.address}
-          onChange={this.onUpdate} />
+            <TextInput
+              name="name"
+              label="Name3"
+              cname="name3"
+              value={partner!.name}
+              onChange={this.onUpdate} />
 
-        <DefaultButton
-          primary={true}
-          disabled={false}
-          data-automation-id="save"
-          text="Save"
-          onClick={this.onSave}
-          allowDisabledFocus={true}
-        />
+          </fieldset>
+          <fieldset>
+            <legend>Engagement Details</legend>
+            <TextInput
+              name="name"
+              label="Name"
+              cname="name"
+              value={partner!.name}
+              onChange={this.onUpdate} />
+
+            <TextInput
+              name="name"
+              label="Name1"
+              cname="name1"
+              value={partner!.name}
+              onChange={this.onUpdate} />
+
+            <TextInput
+              name="name"
+              label="Name2"
+              cname="name2"
+              value={partner!.name}
+              onChange={this.onUpdate} />
+
+            <TextInput
+              name="name"
+              label="Name3"
+              cname="name3"
+              value={partner!.name}
+              onChange={this.onUpdate} />
+
+            <TextInput
+              name="name"
+              label="Name4"
+              cname="name4"
+              value={partner!.name}
+              onChange={this.onUpdate} />
+
+            <SelectInput
+              name="country"
+              label="Country"
+              cname="Dropdown2"
+              value={partner!.country.key}
+              defaultOption="Select a Country"
+              options={this.props.countries}
+              onChange={this.onUpdateCountry} />
+
+          </fieldset>
+        </div>
+
+        <hr />
+        <div className="modal-footer">
+          <div>
+            <DefaultButton
+              primary={true}
+              disabled={false}
+              className="saveBtn"
+              data-automation-id="save"
+              text="Save"
+              onClick={this.onSave}
+              allowDisabledFocus={true}
+            />
+          </div>
+        </div>
       </Modal>
     );
   }

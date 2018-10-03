@@ -9,10 +9,13 @@ interface IInputProps {
   required?: boolean;
   value?: string;
   error?: string;
+  cname?: string;
   onChange?: (event: any) => void;
 };
 
-const TextInput: React.SFC<IInputProps> = ({ name, label, type, placeholder, value, error, required, onChange }: IInputProps) => {
+const TextInput: React.SFC<IInputProps> = ({ name, label, cname, placeholder, value, error, required, onChange }: IInputProps) => {
+
+  const cn = cname ? `${cname}` : "TextField";
 
   return (
     <div className="docs-TextFieldExample">
@@ -24,6 +27,7 @@ const TextInput: React.SFC<IInputProps> = ({ name, label, type, placeholder, val
         value={value}
         onChange={onChange}
         errorMessage={error}
+        className={cn}
       />
     </div>
   );
