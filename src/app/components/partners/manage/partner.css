@@ -1,46 +1,49 @@
-.saveBtn {
-}
 fieldset {
   padding-inline-start: 0;
+  border: none;
+}
+legend {
+  font-weight: bolder;
+  padding-left: 25px;
 }
 .name {
-  margin: 0px 10px 0px 5px;
+  margin-left: 10px;
   width: 200px;
   float: left;
 }
-.address {
-  margin: 0px 10px 0px 5px;
-  width: 400px;
+.account {
+  margin-left: 10px;
+  width: 200px;
   float: left;
 }
 .name1 {
-  margin: 0px 10px 0px 5px;
-  width: 350px;
+  margin-left: 10px;
+  width: 200px;
   float: left;
 }
 .name2 {
-  margin: 0px 10px 0px 5px;
+  margin-left: 10px;
   width: 150px;
   float: left;
 }
 .name3 {
-  margin: 0px 10px 0px 5px;
+  margin-left: 10px;
   width: 150px;
   float: left;
 }
 .Dropdown1 {
-  margin: 0px 10px 0px 10px;
-  width: 75px;
+  margin-left: 10px;
+  width: 150px;
   float: left;
 }
 .Dropdown2 {
-  margin: 0px 10px 0px 10px;
+  margin-left: 10px;
   width: 175px;
   float: left;
 }
 
 .name4 {
-  margin: 0px 10px 0px 5px;
+  margin-left: 10px;
   width: 150px;
   float: left;
 }
