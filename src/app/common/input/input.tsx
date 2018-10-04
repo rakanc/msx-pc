@@ -34,7 +34,8 @@ const TextInput: React.SFC<IInputProps> = ({ name, label, cname, placeholder, va
 };
 
 TextInput.defaultProps = {
-  type: "text"
+  type: "text",
+  required: true
 }
 
 export default TextInput;

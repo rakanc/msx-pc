@@ -8,6 +8,7 @@ import { Country } from "../../../types/country";
 import { Partner } from "../../../types/partner";
 import { IDropdownOption } from "office-ui-fabric-react/lib/Dropdown";
 import { Label } from "office-ui-fabric-react/lib/Label";
+import DateInput from "../../../common/dateinput/dateinput";
 
 // tslint:disable-next-line:no-empty-interface
 export interface PartnerDetailProps {
@@ -26,7 +27,7 @@ export interface PartnerDetailState {
 class PartnerDetail extends React.Component<
   PartnerDetailProps & IButtonProps,
   PartnerDetailState
-> {
+  > {
   constructor(props: PartnerDetailProps, state: PartnerDetailState) {
     super(props, state);
 
@@ -53,11 +54,11 @@ class PartnerDetail extends React.Component<
   public onUpdateCountry(item: IDropdownOption) {
     console.log(
       "here is the things updating..." +
-        item.key +
-        " " +
-        item.text +
-        " " +
-        item.selected
+      item.key +
+      " " +
+      item.text +
+      " " +
+      item.selected
     );
     const partner = Object.assign({}, this.state.partner);
     partner.country = item as Country;
@@ -87,6 +88,18 @@ class PartnerDetail extends React.Component<
   }
   public closeModal(): void {
     this.setState({ showModal: false });
+  }
+
+  public onSelectDate(date: Date) {
+    console.log(' Selected Date ' + date.toDateString());
+  }
+  public onFormatDate(date: Date): string {
+    console.log(' Formatted Date ' + date.toDateString());
+    return date.toDateString()
+  }
+  public onParseDateFromString(date: string): Date {
+    console.log(' ParseDateFromString Date ' + date);
+    return new Date();
   }
 
   public render() {
@@ -130,27 +143,24 @@ class PartnerDetail extends React.Component<
             />
             <SelectInput
               name="country"
-              label="Statsu Reason"
+              label="Status Reason"
               cname="Dropdown1"
               value={partner!.country.key}
               defaultOption="Select he status Reason"
               options={this.props.countries}
               onChange={this.onUpdateCountry}
             />
-            <TextInput
-              name="name"
+            <DateInput
               label="Est. Start Date."
-              cname="name1"
-              value={partner!.name}
-              onChange={this.onUpdate}
+              onSelectDate={this.onSelectDate}
+              onFormatDate={this.onFormatDate}
+              onParseDateFromString={this.onParseDateFromString}
             />
-
-            <TextInput
-              name="name"
+            <DateInput
               label="Est. Completion Date."
-              cname="name1"
-              value={partner!.name}
-              onChange={this.onUpdate}
+              onSelectDate={this.onSelectDate}
+              onFormatDate={this.onFormatDate}
+              onParseDateFromString={this.onParseDateFromString}
             />
 
             <TextInput
@@ -164,12 +174,11 @@ class PartnerDetail extends React.Component<
           <hr />
           <fieldset>
             <legend>Engagement Details</legend>
-            <TextInput
-              name="name"
+            <DateInput
               label="Created On"
-              cname="name"
-              value={partner!.name}
-              onChange={this.onUpdate}
+              onSelectDate={this.onSelectDate}
+              onFormatDate={this.onFormatDate}
+              onParseDateFromString={this.onParseDateFromString}
             />
 
             <SelectInput
@@ -226,13 +235,13 @@ class PartnerDetail extends React.Component<
               onChange={this.onUpdate}
             />
 
-            <TextInput
-              name="name"
+            <DateInput
               label="Modified On"
-              cname="name4"
-              value={partner!.name}
-              onChange={this.onUpdate}
+              onSelectDate={this.onSelectDate}
+              onFormatDate={this.onFormatDate}
+              onParseDateFromString={this.onParseDateFromString}
             />
+
 
             <TextInput
               name="name"
@@ -246,7 +255,7 @@ class PartnerDetail extends React.Component<
 
         <hr />
         <div className="modal-footer">
-        <fieldset>
+          <fieldset>
             <DefaultButton
               primary={true}
               disabled={false}
@@ -255,7 +264,7 @@ class PartnerDetail extends React.Component<
               onClick={this.onSave}
               allowDisabledFocus={true}
             />
-        &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
           <DefaultButton
               primary={true}
               disabled={false}

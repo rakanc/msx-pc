@@ -38,4 +38,82 @@ app.get('/countries', (req, res) => {
   ])
 });
 
+app.get('/engtatusnreason', (req, res) => {
+  console.log('serving the engagement statuses and staus reason...');
+  res.json([
+    {
+      "key": "1", "text": "Active"
+    },
+    {
+      "key": "2", "text": "Inactive"
+    }
+  ])
+});
+
+app.get('/engsolnarea', (req, res) => {
+  console.log('serving the engagement solution area...');
+  res.json([
+    {
+      "key": "1", "text": "Apps and Infra"
+    },
+    {
+      "key": "2", "text": "Business Apps"
+    },
+    {
+      "key": "3", "text": "Data & AI"
+    },
+    {
+      "key": "4", "text": "Modern Workplace"
+    }
+  ])
+});
+
+app.get('/engworkload', (req, res) => {
+  console.log('serving the engagement workload...');
+  res.json([
+    {
+      "key": "1", "text": "Apps: DevOps"
+    },
+    {
+      "key": "2", "text": "D365: Customer service"
+    },
+    {
+      "key": "3", "text": "DataAzure IoT : IoT Central"
+    },
+    {
+      "key": "4", "text": "Teams"
+    },
+    {
+      "key": "5", "text": "Yammer"
+    }
+  ])
+});
+
+app.get('/engworkloadtype', (req, res) => {
+  console.log('serving the engagement workload type...');
+  res.json([
+    {
+      "key": "1", "text": "Azure"
+    },
+    {
+      "key": "2", "text": "Dynamics 365"
+    },
+    {
+      "key": "3", "text": "EMS"
+    },
+    {
+      "key": "4", "text": "O365"
+    },
+    {
+      "key": "5", "text": "SQL Server"
+    },
+    {
+      "key": "5", "text": "Surface"
+    },
+    {
+      "key": "5", "text": "Windows"
+    }
+  ])
+});
+
 app.listen(port, () => console.log(`Mock server listening on port ${port}`))
